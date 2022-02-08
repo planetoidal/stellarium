@@ -2,12 +2,12 @@
 
 The Stellarium catalog files that store proper-motion data (`stars_0_ovo_8.cat`, `stars_1_0v0_8.cat`, `stars_2_0_v0_8.cat`) 
 currently contain incorrect proper-motion values.  This pull request provides modified code that
-calculates the correct proper-motion data for these catalog files.
+calculates the correct proper-motion values for these catalog files.
 
 ### Background
 
-The paper “Comparison of astronomical software programs
-for archaeoastronomical applications”, by De Lorenzis, A. and V. Orofino (2018) (full citation given in the
+The 2018 paper “Comparison of astronomical software programs
+for archaeoastronomical applications”, by De Lorenzis, A. and V. Orofino (full citation given in the
 bibliography of the Stellarium User Guide) compares how different astronomical programs
 compute stellar positions in time scales of interest to archeologists, for instance back to
 10,000 BC.  
@@ -36,7 +36,8 @@ Wallace of STFC Rutherford Appleton Laboratory, UK, as the source for correct st
 I do not have access to this program.  However, the paper notes that the Cartes du Ciel program produces
 hightly accurate positional values in the time frame of interest.  So I downloaded this program and
 had it calculate a series of positions, using the same stars and the same dates as De Lorenzis and Orofino.
-(It should be noted that in the Cartes du Ciel source code on github, the ProperMotion procedure
+(It should be noted that in the Cartes du Ciel [source code on github](https://github.com/pchev/skychart), 
+the ProperMotion procedure
 has the comment, "communicated by Patrick Wallace, RAL Space, UK".)
 
 
