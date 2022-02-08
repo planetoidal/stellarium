@@ -40,5 +40,3 @@ had it calculate a series of positions, using the same stars and the same dates 
 the ProperMotion procedure
 has the comment, "communicated by Patrick Wallace, RAL Space, UK".)
 
-
-
