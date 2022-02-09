@@ -1,3 +1,4 @@
+
 ### Store correct proper motion values in star catalog files
 
 The Stellarium catalog files that store proper-motion data (`stars_0_ovo_8.cat`, `stars_1_0v0_8.cat`, `stars_2_0_v0_8.cat`) 
@@ -40,3 +41,269 @@ had it calculate a series of positions, using the same stars and the same dates 
 the ProperMotion procedure
 has the comment, "communicated by Patrick Wallace, RAL Space, UK".)
 
+
+<table>
+  <tr>
+    <th>Star</th>
+    <th>Year</th>
+    <th>DL&O</th>
+    <th>Cur</th>
+    <th>New</th>
+  </tr>
+  <tr><td colspan="5"></td></tr>
+  <tr>
+    <td rowspan="5">Acrux</td>
+    <td>2500 BC</td>
+    <td><i>0.06</i></td>
+    <td><i>0.06</i></td>
+    <td>-0.00</td>
+  </tr>
+  <tr>
+    <td>4500 BC</td>
+    <td><i>0.08</i></td>
+    <td><b>0.09</b></td>
+    <td>-0.00</td>
+  </tr>
+  <tr>
+    <td>6000 BC</td>
+    <td><b>0.10</b></td>
+    <td><b>0.10</b></td>
+    <td>-0.00</td>
+  </tr>
+  <tr>
+    <td>8000 BC</td>
+    <td><b>0.11</b></td>
+    <td><b>0.11</b></td>
+    <td>-0.01</td>
+  </tr>
+  <tr>
+    <td>10000 BC</td>
+    <td><b>0.10</b></td>
+    <td><b>0.11</b></td>
+    <td>-0.01</td>
+  </tr>
+  <tr><td colspan="5"></td></tr>
+  <tr>
+    <td rowspan="5">Arcturus</td>
+    <td>2500 BC</td>
+    <td><b>-0.32</b></td>
+    <td><b>-0.31</b></td>
+    <td>-0.04</td>
+  </tr>
+  <tr>
+    <td>4500 BC</td>
+    <td><b>-0.46</b></td>
+    <td><b>-0.45</b></td>
+    <td><b>-0.10</b></td>
+  </tr>
+  <tr>
+    <td>6000 BC</td>
+    <td><b>-0.52</b></td>
+    <td><b>-0.52</b></td>
+    <td><b>-0.17</b></td>
+  </tr>
+  <tr>
+    <td>8000 BC</td>
+    <td><b>-0.48</b></td>
+    <td><b>-0.49</b></td>
+    <td><b>-0.28</b></td>
+  </tr>
+  <tr>
+    <td>10000 BC</td>
+    <td><b>-0.45</b></td>
+    <td><b>-0.46</b></td>
+    <td><b>-0.38</b></td>
+  </tr>
+  <tr><td colspan="5"></td></tr>
+  <tr>
+    <td rowspan="5">Dubhe</td>
+    <td>2500 BC</td>
+    <td><b>0.15</b></td>
+    <td><b>0.15</b></td>
+    <td>-0.01</td>
+  </tr>
+  <tr>
+    <td>4500 BC</td>
+    <td><b>0.15</b></td>
+    <td><b>0.14</b></td>
+    <td>-0.02</td>
+  </tr>
+  <tr>
+    <td>6000 BC</td>
+    <td><b>0.18</b></td>
+    <td><b>0.17</b></td>
+    <td>-0.02</td>
+  </tr>
+  <tr>
+    <td>8000 BC</td>
+    <td><b>0.25</b></td>
+    <td><b>0.24</b></td>
+    <td>-0.02</td>
+  </tr>
+  <tr>
+    <td>10000 BC</td>
+    <td><b>0.38</b></td>
+    <td><b>0.37</b></td>
+    <td>-0.02</td>
+  </tr>
+  <tr><td colspan="5"></td></tr>
+  <tr>
+    <td rowspan="5">Rigel</td>
+    <td>2500 BC</td>
+    <td>0.00</td>
+    <td>-0.00</td>
+    <td>-0.00</td>
+  </tr>
+  <tr>
+    <td>4500 BC</td>
+    <td>0.00</td>
+    <td>-0.00</td>
+    <td>-0.00</td>
+  </tr>
+  <tr>
+    <td>6000 BC</td>
+    <td>0.00</td>
+    <td>-0.01</td>
+    <td>-0.01</td>
+  </tr>
+  <tr>
+    <td>8000 BC</td>
+    <td>0.00</td>
+    <td>-0.00</td>
+    <td>-0.00</td>
+  </tr>
+  <tr>
+    <td>10000 BC</td>
+    <td>0.01</td>
+    <td>0.01</td>
+    <td>0.01</td>
+  </tr>
+  <tr><td colspan="5"></td></tr>
+  <tr>
+    <td rowspan="5">Sirius</td>
+    <td>2500 BC</td>
+    <td><b>-0.13</b></td>
+    <td><b>-0.14</b></td>
+    <td>-0.04</td>
+  </tr>
+  <tr>
+    <td>4500 BC</td>
+    <td><b>-0.23</b></td>
+    <td><b>-0.23</b></td>
+    <td><i>-0.07</i></td>
+  </tr>
+  <tr>
+    <td>6000 BC</td>
+    <td><b>-0.30</b></td>
+    <td><b>-0.31</b></td>
+    <td><b>-0.11</b></td>
+  </tr>
+  <tr>
+    <td>8000 BC</td>
+    <td><b>-0.42</b></td>
+    <td><b>-0.42</b></td>
+    <td><b>-0.17</b></td>
+  </tr>
+  <tr>
+    <td>10000 BC</td>
+    <td><b>-0.52</b></td>
+    <td><b>-0.52</b></td>
+    <td><b>-0.24</b></td>
+  </tr>
+  <tr><td colspan="5"></td></tr>
+  <tr>
+    <td rowspan="5">Thuban</td>
+    <td>2500 BC</td>
+    <td><i>-0.07</i></td>
+    <td>-0.05</td>
+    <td>0.01</td>
+  </tr>
+  <tr>
+    <td>4500 BC</td>
+    <td><i>0.08</i></td>
+    <td><i>0.07</i></td>
+    <td>-0.01</td>
+  </tr>
+  <tr>
+    <td>6000 BC</td>
+    <td><b>0.09</b></td>
+    <td><i>0.08</i></td>
+    <td>-0.01</td>
+  </tr>
+  <tr>
+    <td>8000 BC</td>
+    <td><i>0.08</i></td>
+    <td><i>0.07</i></td>
+    <td>-0.02</td>
+  </tr>
+  <tr>
+    <td>10000 BC</td>
+    <td><i>0.06</i></td>
+    <td>0.05</td>
+    <td>-0.01</td>
+  </tr>
+  <tr><td colspan="5"></td></tr>
+  <tr>
+    <td rowspan="5">Toliman</td>
+    <td>2500 BC</td>
+    <td><b>3.48</b></td>
+    <td><b>3.47</b></td>
+    <td><i>0.07</i></td>
+  </tr>
+  <tr>
+    <td>4500 BC</td>
+    <td><b>5.32</b></td>
+    <td><b>5.30</b></td>
+    <td>0.04</td>
+  </tr>
+  <tr>
+    <td>6000 BC</td>
+    <td><b>6.68</b></td>
+    <td><b>6.66</b></td>
+    <td><b>-0.11</b></td>
+  </tr>
+  <tr>
+    <td>8000 BC</td>
+    <td><b>8.19</b></td>
+    <td><b>8.17</b></td>
+    <td><b>-0.55</b></td>
+  </tr>
+  <tr>
+    <td>10000 BC</td>
+    <td><b>8.97</b></td>
+    <td><b>8.96</b></td>
+    <td><b>-1.32</b></td>
+  </tr>
+  <tr><td colspan="5"></td></tr>
+  <tr>
+    <td rowspan="5">Vega</td>
+    <td>2500 BC</td>
+    <td><b>0.13</b></td>
+    <td><b>0.14</b></td>
+    <td>0.01</td>
+  </tr>
+  <tr>
+    <td>4500 BC</td>
+    <td><b>0.21</b></td>
+    <td><b>0.22</b></td>
+    <td>0.01</td>
+  </tr>
+  <tr>
+    <td>6000 BC</td>
+    <td><b>0.27</b></td>
+    <td><b>0.28</b></td>
+    <td>0.01</td>
+  </tr>
+  <tr>
+    <td>8000 BC</td>
+    <td><b>0.34</b></td>
+    <td><b>0.35</b></td>
+    <td>0.02</td>
+  </tr>
+  <tr>
+    <td>10000 BC</td>
+    <td><b>0.40</b></td>
+    <td><b>0.41</b></td>
+    <td>0.01</td>
+  </tr>
+</table>
