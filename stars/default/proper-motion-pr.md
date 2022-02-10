@@ -41,6 +41,7 @@ Wallace of STFC Rutherford Appleton Laboratory, UK, as the source for correct st
 I do not have access to this program.  However, DL&O list the calculated declination values (but not the RAs)
 for selected stars at selected times, and they list the corresponding declination errors in Stellarium.
 
+<!--
 (Ignore...)
 However, the paper notes that the Cartes du Ciel program produces
 hightly accurate positional values in the time frame of interest.  So I downloaded this program and
@@ -48,8 +49,30 @@ had it calculate a series of positions, using the same stars and the same dates 
 (It should be noted that in the Cartes du Ciel [source code on github](https://github.com/pchev/skychart), 
 the ProperMotion procedure
 has the comment, "communicated by Patrick Wallace, RAL Space, UK".)
+-->
 
-DL&O ran comparisons using 25 bright and/or significant stars,
+DL&O ran their comparisons on 25 bright and/or significant stars, on 5 different dates in the past.
+For the table below, I used the seven stars that DL&O reported as showing significant errors in Stellarium
+at the most recent date (2500 BC).
+As a point of comparision, I added Rigel, a star where Stellairum did not show significant errors, even at the
+most ancient date (10,000 BC).
+
+In the table below, the column labeled **DL&O** contains a copy of the Stellarium
+declination errors (∆δ, in degrees)
+that were presented in Tables 2, 3, and 4 of DL&O.  
+
+The **Cur** column gives
+the declination errors when I use the current version of Stellarium (0.21.2).  If my calculations match those
+of DL&O, the values in the **DL&O** and **Cur** columns should be identical.  In fact, they are very close, with a
+maximum difference of 0.02 degrees.
+
+The **New** column shows the declination errors when the current version of Stellarium is used in conjunction with
+my recalculated star catalogs.  To be clear, the Stellarium software is unchanged; only the dx0 and dx1 values in
+the star catalogs are different.  
+
+Numbers are printed in **bold** if they are 0.08 or above, and in italics if they are between 0.05 and 0.08.  These 
+correspond to criteria mentioned in DL&O. 
+
 
 <table>
   <tr>
@@ -316,3 +339,5 @@ DL&O ran comparisons using 25 bright and/or significant stars,
     <td>0.01</td>
   </tr>
 </table>
+
+The results in the **New** column show that many of the errors in the current version are greatly reduced.
