@@ -13,34 +13,43 @@ bibliography of the Stellarium User Guide) compares how different astronomical p
 compute stellar positions in time scales of interest to archeologists, for instance back to
 10,000 BC.  
 
-This paper notes that Stellarium has significant innacuracies when computing the positions of stars with
+This paper (which I will abbreviate as DL&O) 
+notes that Stellarium exhibits significant innacuracies when computing the positions of stars with
 high proper motions.  The paper suggests that these inaccuracies are due to the fact that Stellarium
 ignores the observed radial velocities of stars when calculating their positions over time, and only uses the
-"proper motion" (motion observed in right acension and declination).
+proper motion (motion observed in right acension and declination).
 
 It is true that ignoring the radial velocity will lead to increasing inaccuracies over time, but I determined
-that the proper-motion information in the Stellarium star catalogs is calculated in a way that is inconsistent with how that
-information is used when the catalog is read into the program.  In other words, Stellarium's accuracy problems
-with high-proper-motion stars are mostly due to the fact that the proper-motion values in the catalog are incorrect!
+that **a more significant problem is that the proper-motion values in the Stellarium star catalogs are incorrect**!
 
-I was able to fix this problem.  
+The inaccuracies in the catalog are not obvious, because the catalog does not contain the raw proper motion data
+(changes in RA and declination in milli-arc-seconds per year).  Instead, the values stored in the catalog are derived
+values, designed to be used efficiently in the Stellarium software.  Unfortunately, the way the values in the
+catalog are calculated is inconsistent with how the values are used in Stellarium.
+
+I was able to fix this problem by correcting the values in the catalog files.
 
 ### Comparison
 
 I will show some tables for comparison, but first a few words about how the comparision
 was generated.
 
-The De Lorenzis and Orofino paper used a program named Orion, written 
+The DL&O paper used a program named Orion, written 
 by Patrick
-Wallace of STFC Rutherford Appleton Laboratory, UK, as the source for correct stellar positions.
+Wallace of STFC Rutherford Appleton Laboratory, UK, as the source for correct stellar positions over time.
 
-I do not have access to this program.  However, the paper notes that the Cartes du Ciel program produces
+I do not have access to this program.  However, DL&O list the calculated declination values (but not the RAs)
+for selected stars at selected times, and they list the corresponding declination errors in Stellarium.
+
+(Ignore...)
+However, the paper notes that the Cartes du Ciel program produces
 hightly accurate positional values in the time frame of interest.  So I downloaded this program and
 had it calculate a series of positions, using the same stars and the same dates as De Lorenzis and Orofino.
 (It should be noted that in the Cartes du Ciel [source code on github](https://github.com/pchev/skychart), 
 the ProperMotion procedure
 has the comment, "communicated by Patrick Wallace, RAL Space, UK".)
 
+DL&O ran comparisons using 25 bright and/or significant stars,
 
 <table>
   <tr>
