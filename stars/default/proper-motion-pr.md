@@ -347,3 +347,20 @@ been reduced (significantly, in the case of Toliman) but are still unacceptable 
 10,000 BC, according to DL&O's criteria.
 Of course, Rigel, the low-proper-motion star, shows insignificant errors in both the **Cur** and **New**
 columns.
+
+### `dx0` and `dx1` in Stellarium
+
+In this section I will show how Stellarium uses the `dx0` and dx1` values that are provided by the star
+catalog.  In the next section, I will show derive the formulas for calculating these values, given
+the proper motions in RA and declination.
+
+The key code is in `src/code/modules/Star.hpp`:
+```
+	void getJ2000Pos(const ZoneData *z,float movementFactor, Vec3f& pos) const
+	{
+		pos = z->axis0;
+		pos*=(static_cast<float>(getX0())+movementFactor*getDx0());
+		pos+=(static_cast<float>(getX1())+movementFactor*getDx1())*z->axis1;
+		pos+=z->center;
+	}
+```
