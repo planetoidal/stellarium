@@ -10,16 +10,15 @@ calculates the correct proper-motion values for these catalog files.
 The 2018 paper “Comparison of astronomical software programs
 for archaeoastronomical applications”, by De Lorenzis, A. and V. Orofino (full citation given in the
 bibliography of the Stellarium User Guide) compares how different astronomical programs
-compute stellar positions in time scales of interest to archeologists, for instance back to
-10,000 BC.  
+compute stellar positions at  times ranging from 2,500 BC to 10,000 BC.  
 
 This paper (which I will abbreviate as DL&O) 
-notes that Stellarium exhibits significant innacuracies when computing the positions of stars with
+points out that Stellarium exhibits significant inaccuracies when computing the positions of stars with
 high proper motions.  The paper suggests that these inaccuracies are due to the fact that Stellarium
 ignores the observed radial velocities of stars when calculating their positions over time, and only uses the
 proper motion (motion observed in right acension and declination).
 
-It is true that ignoring the radial velocity will lead to increasing inaccuracies over time, but I determined
+It is true that ignoring the radial velocity will lead to increasing inaccuracies over time, but I was able to determine
 that **a more significant problem is that the proper-motion values in the Stellarium star catalogs are incorrect**!
 
 The inaccuracies in the catalog are not obvious, because the catalog does not contain the raw proper motion data
@@ -27,7 +26,7 @@ The inaccuracies in the catalog are not obvious, because the catalog does not co
 values, designed to be used efficiently in the Stellarium software.  Unfortunately, the way the values in the
 catalog are calculated is inconsistent with how the values are used in Stellarium.
 
-I was able to fix this problem by correcting the values in the catalog files.
+I have been able to fix this problem by correcting the values in the catalog files.
 
 ### Comparison
 
@@ -38,8 +37,9 @@ The DL&O paper used a program named Orion, written
 by Patrick
 Wallace of STFC Rutherford Appleton Laboratory, UK, as the source for correct stellar positions over time.
 
-I do not have access to this program.  However, DL&O list the calculated declination values (but not the RAs)
-for selected stars at selected times, and they list the corresponding declination errors in Stellarium.
+I do not have access to this program.  However, DL&O provides the declination values (but not the RAs) calculated
+by Orion,
+for selected stars at selected times, and they provide the corresponding declination errors in Stellarium.
 
 <!--
 (Ignore...)
@@ -53,13 +53,13 @@ has the comment, "communicated by Patrick Wallace, RAL Space, UK".)
 
 DL&O ran their comparisons on 25 bright and/or significant stars, on 5 different dates in the past.
 For the table below, I used the seven stars that DL&O reported as showing significant errors in Stellarium
-at the most recent date (2500 BC).
-As a point of comparision, I added Rigel, a star where Stellairum did not show significant errors, even at the
-most ancient date (10,000 BC).
+at the most recent date (2,500 BC).
+As a point of comparision, I added Rigel, a low-proper-motion star where Stellairum did not show significant errors, 
+even at the most ancient date (10,000 BC).
 
 In the table below, the column labeled **DL&O** contains a copy of the Stellarium
 declination errors (∆δ, in degrees)
-that were presented in Tables 2, 3, and 4 of DL&O.  
+that are presented in Tables 2, 3, and 4 of DL&O.  
 
 The **Cur** column gives
 the declination errors when I use the current version of Stellarium (0.21.2).  If my calculations match those
@@ -67,7 +67,7 @@ of DL&O, the values in the **DL&O** and **Cur** columns should be identical.  In
 maximum difference of 0.02 degrees.
 
 The **New** column shows the declination errors when the current version of Stellarium is used in conjunction with
-my recalculated star catalogs.  To be clear, the Stellarium software is unchanged; only the dx0 and dx1 values in
+my recalculated star catalogs.  To be clear, the Stellarium software is unchanged; only the `dx0` and `dx1` values in
 the star catalogs are different.  
 
 Numbers are printed in **bold** if they are 0.08 or above, and in italics if they are between 0.05 and 0.08.  These 
@@ -340,4 +340,10 @@ correspond to criteria mentioned in DL&O.
   </tr>
 </table>
 
-The results in the **New** column show that many of the errors in the current version are greatly reduced.
+The results in the **New** column show that the errors for four of the stars (Acrux, Dubhe, Thuban, and Vega)
+have been reduced to insignificance, even as far back as 10,000 BC.
+The errors for Arcturus, Sirius, and Toliman have
+been reduced (significantly, in the case of Toliman) but are still unacceptable at
+10,000 BC, according to DL&O's criteria.
+Of course, Rigel, the low-proper-motion star, shows insignificant errors in both the **Cur** and **New**
+columns.
