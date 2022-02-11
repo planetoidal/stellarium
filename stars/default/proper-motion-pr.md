@@ -350,8 +350,9 @@ columns.
 
 ### `dx0` and `dx1` in Stellarium
 
-In this section I will show how Stellarium uses the `dx0` and dx1` values that are provided by the star
-catalog.  In the next section, I will show derive the formulas for calculating these values, given
+In this section I will show how Stellarium uses the `dx0` and `dx1` values that are provided by the star
+catalog.  And in the next section, I will derive the formulas for calculating these `dx0` and `dx1`
+values, given
 the proper motions in RA and declination.
 
 The key code is in `src/code/modules/Star.hpp`:
@@ -364,3 +365,36 @@ The key code is in `src/code/modules/Star.hpp`:
 		pos+=z->center;
 	}
 ```
+
+This code computes the _xyz_ position of a star, given the time of the observation.
+Taking this step by step:
+
+For the purposes of the catalog, the celestial sphere is overlaid by a subdivided icosahedral grid.
+Each triangular cell of the grid is called a Zone; each star in the catalog is placed in whichever Zone
+corresponds
+to the star's position in the grid.
+
+The input pointer ZoneData points to information about the triangle that corresponds to the 
+current star's Zone.
+
+The triangle has a point ZoneData::center, which is the xyz point where the triangle is tangent to the
+sphere.  Embedded in the plane of the triangle, and with origins at this tangent point, are two
+3D vectors: ZoneData::axis0, and ZoneData::axis1.  Axis 0 is parallel to the equator of the celestial
+sphere; axis 1 is perpendicular to axis 0.  As already mentioned, these two vectors are embedded
+in the plane that is tangent to the sphere at the tangent point ZoneData::center.
+The line extending from the center of the celestial
+sphere to the tangent point (ZoneData::center) is perpendicular to both axis 0 and axis 1.
+
+The Stellarium catalog contains two values, x0 and x1, that can be used to find the position of the
+star in the J2000 system.  The formula for the star's position (which does not yet take proper motion
+into account) is:
+
+pos = z->center + x0\*axis0 + x1\*axis1
+
+where pos and z->center are locations in xyz space, axis0 and axis1 are 3D vectors in this space,
+and x0 and x1 are provided by the Stellarium catalog.
+
+The resulting xyz position, pos, can be converted to spherical coordinates, yielding the
+RA and declination of the star in J2000 coordinates, assuming
+no proper motion.
+
