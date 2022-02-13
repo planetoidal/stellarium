@@ -374,27 +374,28 @@ Each triangular cell of the grid is called a Zone; each star in the catalog is p
 corresponds
 to the star's position in the grid.
 
-The input pointer ZoneData points to information about the triangle that corresponds to the 
+The input variable `z` is a pointer to a `ZoneData` structure, which
+contains information about the triangle that corresponds to the 
 current star's Zone.
 
-The triangle has a point ZoneData::center, which is the xyz point where the triangle is tangent to the
+The triangle has a point `ZoneData::center`, which is the _xyz_ point where the triangle is tangent to the
 sphere.  Embedded in the plane of the triangle, and with origins at this tangent point, are two
-3D vectors: ZoneData::axis0, and ZoneData::axis1.  Axis 0 is parallel to the equator of the celestial
-sphere; axis 1 is perpendicular to axis 0.  As already mentioned, these two vectors are embedded
-in the plane that is tangent to the sphere at the tangent point ZoneData::center.
+3D vectors: `ZoneData::axis0`, and `ZoneData::axis1`.  Axis 0 not only lies in the tangent plane;
+it also is parallel to the equator of the celestial
+sphere.  Axis 1 likewise lies in the tangent plane, and is perpendicular to axis 0.  
 The line extending from the center of the celestial
-sphere to the tangent point (ZoneData::center) is perpendicular to both axis 0 and axis 1.
+sphere to the tangent point (`ZoneData::center`) is perpendicular to both axis 0 and axis 1.
 
-The Stellarium catalog contains two values, x0 and x1, that can be used to find the position of the
+The Stellarium catalog contains two values, `x0` and `x1`, that can be used to find the position of the
 star in the J2000 system.  The formula for the star's position (which does not yet take proper motion
 into account) is:
 
-pos = z->center + x0\*axis0 + x1\*axis1
+`pos = z->center + x0\*z0->axis0 + x1\*z->axis1`
 
-where pos and z->center are locations in xyz space, axis0 and axis1 are 3D vectors in this space,
-and x0 and x1 are provided by the Stellarium catalog.
+where `pos` and `z->center` are locations in _xyz_ space, `z->axis0` and `z->axis1` are 3D vectors in this space,
+and `x0` and `x1` are provided by the Stellarium catalog.
 
-The resulting xyz position, pos, can be converted to spherical coordinates, yielding the
+The resulting _xyz_ position, `pos`, can be converted to spherical coordinates, yielding the
 RA and declination of the star in J2000 coordinates, assuming
 no proper motion.
 
